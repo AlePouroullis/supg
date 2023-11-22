@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=24:mpiprocs=24
+#PBS -P CSCI1142
+#PBS -q smp
+#PBS -l walltime=96:00:00
+#PBS -o /mnt/lustre/users/jsmith1/job.out
+#PBS -e /mnt/lustre/users/jsmith1/job.err
+#PBS -m abe
+#PBS -M smtjul022@myuct.ac.za
+#PBS -N EBSUPG10
+
+ulimit -s unlimited
+
+cd /mnt/lustre/users/jsmith1/Hexapod---SUPG/JSUPG/
+
+python3 /mnt/lustre/users/jsmith1/Hexapod---SUPG/JSUPG/Bexample_run.py 6000 EBSUPG10 EBSUPG10
