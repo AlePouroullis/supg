@@ -28,7 +28,7 @@ tripod_gait = [0.15, 0, 0.05, 0.5, 0.5,  # leg 1
                0.15, 0, 0.05, 0.0, 0.5]  # leg 6
 
 
-def evaluate_gait_parallel(genome, config, duration=5):
+def evaluate_gait(genome, config, duration=5):
     cppn = neat.nn.FeedForwardNetwork.create(genome, config)
 
     try:
@@ -67,7 +67,7 @@ def run(gens: int):
 
     # running in parallel
     pe = neat.ParallelEvaluator(
-        multiprocessing.cpu_count(), evaluate_gait_parallel)
+        multiprocessing.cpu_count(), evaluate_gait)
 
     # Run until a solution is found
 

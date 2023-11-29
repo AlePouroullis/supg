@@ -24,13 +24,14 @@ for i in range(18):  # 6 legs * 3 joints per leg
     neuron.setYPos(-0.3 + (leg_id * 0.15))
 
     # Set x-axis based on joint type (more spacing on x-axis)
-    neuron.setXPos(-0.8 + (joint_id * 0.5))
+    neuron.setXPos(-0.8 + (joint_id * 0.8))
 
     neuronList.append(neuron)
 
 # Extract the x and y coordinates for plotting
 x_coords = [neuron.x for neuron in neuronList]
 y_coords = [neuron.y for neuron in neuronList]
+
 
 # Create a scatter plot to represent the substrate layout
 plt.figure(figsize=(8, 6))
@@ -39,4 +40,6 @@ plt.title('Substrate Layout for Hexapod Robot Neurons')
 plt.xlabel('X-axis (Joint Type)')
 plt.ylabel('Y-axis (Leg ID)')
 plt.grid(True)
+plt.xlim(-1, 1)
+plt.ylim(-1, 1)
 plt.show()

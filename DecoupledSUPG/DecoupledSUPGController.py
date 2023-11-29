@@ -145,7 +145,7 @@ class DecoupledSUPGController:
             neuron.setYPos(-0.3 + (leg_id * 0.15))
 
             # Set x-axis based on joint type (more spacing on x-axis)
-            neuron.setXPos(-0.8 + (joint_id * 0.5))
+            neuron.setXPos(-0.8 + (joint_id * 0.8))
 
 
     # offsets are used to ensure the robot does not fire all legs at once on the initial angle request
